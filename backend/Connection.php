@@ -3,12 +3,14 @@
 class Connection{
     
     private $connection;
-    private $error;
-    
+        
     public function __construct(){
-        $dsn = "mysql:host=localhost;dbname=on_line_store";
-        $user ='root';
-        $password = 'admin';
+        // 3. Setear el nombre de la base de datos 
+        $dsn = "mysql:host=localhost;dbname=";
+        // 3. Setear el nombre del usuario de su gestor de base de datos
+        $user ='';
+        // 3. Setear la contraseña de su gestor de base de datos
+        $password = '';
         $this->connection = new PDO($dsn, $user, $password);    
     }
 

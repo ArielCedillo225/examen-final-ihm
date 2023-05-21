@@ -3,7 +3,9 @@ let productsInCart = [];
 const divProducts = document.getElementById('products');
 
 function listProducts() {
-    fetch('http://localhost:9000/listProducts.php')
+    // 5. LLamar a la url correcta
+    
+    // --
     .then( (response) => response.json() )
     .then( (data) => {
         products = data; 
@@ -35,14 +37,18 @@ function renderProductCard(product){
     
     const productImage = document.createElement('img');
     productImage.setAttribute('class', 'card-img-top product-img');
+    // 6. Agregar la sentencia faltante para que las imágenes de los productos se muestren en la interfaz
+    
+    // --
     const addToCartButton = document.createElement('button');
-    addToCartButton.innerHTML = 'Agregar al carrito';
+    // 7. Corregir la etiqueta del botón
+    addToCartButton.innerHTML = 'Submit';
+    // --
     addToCartButton.setAttribute("onclick", `addToCart('${product.id}')`);
     addToCartButton.setAttribute('class', 'btn btn-secondary');
     
     productName.innerHTML = product.name;
     productStock.innerHTML = product.stock;
-    productImage.setAttribute('src', 'img/' + product.image);
     
     
     divProduct.appendChild(productImage);

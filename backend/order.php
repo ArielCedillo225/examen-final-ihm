@@ -7,11 +7,13 @@ $order = json_decode($rawData);
 
 $date = new DateTime();
 $now = $date->format('Y-m-d');
-$query = "INSERT INTO orders (userId, date) 
-VALUES ('{$order->userId}', '$now' )";
-echo $query;
-$connection = new Connection();
-$result = $connection->query($query);
+
+// 9. Generar la sentencia SQL para insertar los valores del id de la orden y la variable now en la tabla orders
+
+// --
+// 9. Realizar la consulta a la base de datos y guardar su resultado en la variable $result
+
+// --
 if($result === null){
     echo "Error al crear el pedido";
 }
