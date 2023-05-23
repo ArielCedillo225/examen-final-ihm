@@ -6,11 +6,11 @@ class Connection{
         
     public function __construct(){
         // 3. Setear el nombre de la base de datos 
-        $dsn = "mysql:host=localhost;dbname=";
+        $dsn = "mysql:host=localhost;dbname=on_line_store";
         // 3. Setear el nombre del usuario de su gestor de base de datos
-        $user ='';
+        $user ='root';
         // 3. Setear la contraseña de su gestor de base de datos
-        $password = '';
+        $password = '12341';
         $this->connection = new PDO($dsn, $user, $password);    
     }
 

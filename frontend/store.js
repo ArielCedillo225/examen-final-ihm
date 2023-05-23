@@ -4,7 +4,7 @@ const divProducts = document.getElementById('products');
 
 function listProducts() {
     // 5. LLamar a la url correcta
-    
+    fetch('http://localhost:9000/listProducts.php')
     // --
     .then( (response) => response.json() )
     .then( (data) => {
@@ -20,6 +20,8 @@ function showProducts(){
 }
 
 function renderProductCard(product){
+
+    const divProducts = document.getElementById('products')
     
     const divProduct = document.createElement('div');
     divProduct.setAttribute('class', 'card product-card');
@@ -38,11 +40,11 @@ function renderProductCard(product){
     const productImage = document.createElement('img');
     productImage.setAttribute('class', 'card-img-top product-img');
     // 6. Agregar la sentencia faltante para que las imágenes de los productos se muestren en la interfaz
-    
+    productImage.setAttribute('src', `./img/${product.image}`);
     // --
     const addToCartButton = document.createElement('button');
     // 7. Corregir la etiqueta del botón
-    addToCartButton.innerHTML = 'Submit';
+    addToCartButton.innerHTML = 'Agregar al carrito';
     // --
     addToCartButton.setAttribute("onclick", `addToCart('${product.id}')`);
     addToCartButton.setAttribute('class', 'btn btn-secondary');
